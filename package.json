@@ -1,7 +1,6 @@
 {
   "name": "vocabularies",
   "private": true,
-  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/naxmefy/vocabularies.git"
@@ -16,7 +15,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint **/*.js",
+    "lint": "eslint {components,middlewares,models,pages}/**/*.js",
     "test": "jest",
     "test:watch": "yarn test --watch",
     "test:coverage": "yarn test --coverage"
