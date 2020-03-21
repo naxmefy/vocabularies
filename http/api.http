@@ -1,2 +1,10 @@
 GET http://localhost:3000/api/me
 
+###
+
+POST http://localhost:3000/api/sign-in
+content-type: application/json
+
+{
+  "email": "jon@doe.com"
+}
