@@ -15,7 +15,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint {components,middlewares,models,pages}/**/*.js",
+    "lint": "eslint {components,pages}/**/*.js",
     "test": "jest",
     "test:watch": "yarn test --watch",
     "test:coverage": "yarn test --coverage"
