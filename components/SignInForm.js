@@ -7,9 +7,6 @@ import SignInSubmitButton from './SignInSubmitButton'
 // eslint-disable-next-line react/display-name
 export default () => (
   <div>
-    <div className="text-gray-500 text-center mb-3 font-bold">
-      <small>Oder mit Zugangsdaten anmelden</small>
-    </div>
     <form>
       <div className="relative w-full mb-3">
         <EmailField />

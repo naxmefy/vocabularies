@@ -1,10 +1,9 @@
+import { FaGoogle } from 'react-icons/fa'
 import React from 'react'
 
 const style = {
   transition: 'all 0.15s ease 0s',
 }
-
-const image = 'https://demos.creative-tim.com/tailwindcss-starter-project/static/media/google.87be59a1.svg'
 
 // eslint-disable-next-line react/display-name
 export default () => (
@@ -13,7 +12,9 @@ export default () => (
     type="button"
     style={style}
   >
-    <img alt="..." className="w-5 mr-1" src={image} />
+    <span className="pr-2 text-lg">
+      <FaGoogle />
+    </span>
     Google
   </button>
 )
