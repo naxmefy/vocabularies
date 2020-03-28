@@ -1,7 +1,7 @@
 import config from '../lib/config'
 import mongoose from 'mongoose'
 
-export default async (req, res, next) => {
+export default async (req, _, next) => {
   if (mongoose.connections[0].readyState) {
     req.db = mongoose.connection[0]
   } else {

@@ -1,4 +1,4 @@
-export default (req, res, next) => {
+export default (_, res, next) => {
   res.redirect = (code, path) => {
     let location = path
     let status = code

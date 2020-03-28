@@ -1,5 +1,5 @@
-import { getAt } from './object'
-import permitValidator from './permit-validator'
+import { getAt } from '../lib/object'
+import permitValidator from '../lib/permit-validator'
 
 export default definition => {
   return (req, res, next) => {
@@ -16,6 +16,7 @@ export default definition => {
     }
 
     if (errors.length > 0) return res.status(400).send(errors)
-    else next()
+
+    next()
   }
 }

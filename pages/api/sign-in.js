@@ -1,8 +1,9 @@
 import connect from 'next-connect'
+import error from '../../middlewares/error'
 import middlewares from '../../middlewares'
-import permitParams from '../../lib/permit-params'
+import permitParams from '../../middlewares/permit-params'
 
-const handler = connect()
+const handler = connect({ onError: error })
 handler.use(middlewares)
 handler.use(
   permitParams({
