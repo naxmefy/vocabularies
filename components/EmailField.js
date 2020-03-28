@@ -1,11 +1,11 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 
 const style = {
   transition: 'all 0.15s ease 0s',
 }
 
-// eslint-disable-next-line react/display-name
-export default () => (
+const EmailField = ({ value, onChange }) => (
   <div>
     <label className="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="email">
       E-Mail
@@ -17,6 +17,15 @@ export default () => (
       type="email"
       placeholder="E-Mail"
       style={style}
+      value={value}
+      onChange={onChange}
     />
   </div>
 )
+
+EmailField.propTypes = {
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+}
+
+export default EmailField
