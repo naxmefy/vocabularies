@@ -1,8 +1,14 @@
 import '../styles/app.css'
 
+import App from 'next/app'
 import React from 'react'
+import { appWithTranslation } from '../i18n'
 
-/* eslint react/prop-types: 0 */
-export default function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+class MyApp extends App {
+  render() {
+    const { Component, pageProps } = this.props
+    return <Component {...pageProps} />
+  }
 }
+
+export default appWithTranslation(MyApp)

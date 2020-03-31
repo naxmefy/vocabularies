@@ -5,17 +5,17 @@ const style = {
   transition: 'all 0.15s ease 0s',
 }
 
-const PasswordField = ({ value, onChange }) => (
+const PasswordField = ({ label, name, value, onChange }) => (
   <div>
-    <label className="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="password">
-      Passwort
+    <label className="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor={name}>
+      {label}
     </label>
     <input
       className="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
-      id="password"
-      name="password"
+      id={name}
+      name={name}
       type="password"
-      placeholder="Passwort"
+      placeholder={label}
       style={style}
       value={value}
       onChange={onChange}
@@ -24,6 +24,8 @@ const PasswordField = ({ value, onChange }) => (
 )
 
 PasswordField.propTypes = {
+  label: PropTypes.string,
+  name: PropTypes.string,
   value: PropTypes.string,
   onChange: PropTypes.func,
 }

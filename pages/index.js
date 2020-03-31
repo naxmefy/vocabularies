@@ -1,12 +1,16 @@
+import AppNavLayout from '../components/AppNavLayout'
 import React from 'react'
+import { withTranslation } from '../i18n'
 
 const Home = () => (
-  <div className="p-12">
-    <div className="p-4 shadow rounded bg-white">
-      <h1 className="text-purple-500 leading-normal">Next.js</h1>
-      <p className="text-gray-500">with Tailwind CSS</p>
+  <AppNavLayout>
+    <div className="p-12">
+      <div className="p-4 shadow rounded bg-white">
+        <h1 className="text-purple-500 leading-normal">Vocabularies</h1>
+        <p className="text-gray-500">Just a tool to learn</p>
+      </div>
     </div>
-  </div>
+  </AppNavLayout>
 )
 
-export default Home
+export default withTranslation('common')(Home)

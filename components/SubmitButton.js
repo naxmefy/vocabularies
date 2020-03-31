@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 
 const style = {
@@ -5,14 +6,20 @@ const style = {
 }
 
 // eslint-disable-next-line react/display-name
-export default () => (
+const SubmitButton = ({ label }) => (
   <div>
     <button
       className="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full"
       type="button"
       style={style}
     >
-      Anmelden
+      {label}
     </button>
   </div>
 )
+
+SubmitButton.propTypes = {
+  label: PropTypes.string,
+}
+
+export default SubmitButton

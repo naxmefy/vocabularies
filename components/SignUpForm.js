@@ -3,18 +3,17 @@ import React, { Component } from 'react'
 import EmailField from './EmailField'
 import PasswordField from './PasswordField'
 import PropTypes from 'prop-types'
-import RememberMeField from './RememberMeField'
 import SubmitButton from './SubmitButton'
 
 // eslint-disable-next-line react/display-name
 class SignInForm extends Component {
   constructor(props) {
     super(props)
-    this.state = { email: '', password: '', rememberMe: false }
+    this.state = { email: '', password: '', passwordRepeat: '', rememberMe: false }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleEmailChange = this.handleEmailChange.bind(this)
     this.handlePasswordChange = this.handlePasswordChange.bind(this)
-    this.handleRememberMeChange = this.handleRememberMeChange.bind(this)
+    this.handlePasswordRepeatChange = this.handlePasswordRepeatChange.bind(this)
   }
 
   handleSubmit(event) {
@@ -32,9 +31,9 @@ class SignInForm extends Component {
     this.setState({ password: event.target.value })
   }
 
-  handleRememberMeChange(event) {
-    console.log('handleRememberMeChange', event.target.value)
-    this.setState({ rememberMe: event.target.value === 'on' })
+  handlePasswordRepeatChange(event) {
+    console.log('handlePasswordRepeatChange', event.target.value)
+    this.setState({ passwordRepeat: event.target.value })
   }
 
   render() {
@@ -42,16 +41,26 @@ class SignInForm extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <div className="relative w-full mb-3">
-            <EmailField value={this.state.email} onChange={this.handleEmailChange} />
+            <EmailField label={'Email'} name={'email'} value={this.state.email} onChange={this.handleEmailChange} />
           </div>
           <div className="relative w-full mb-3">
-            <PasswordField value={this.state.password} onChange={this.handlePasswordChange} />
+            <PasswordField
+              label={'Password'}
+              name={'password'}
+              value={this.state.password}
+              onChange={this.handlePasswordChange}
+            />
           </div>
-          <div>
-            <RememberMeField value={this.state.rememberMe} onChange={this.handleRememberMeChange} />
+          <div className="relative w-full mb-3">
+            <PasswordField
+              label={'Repeat Password'}
+              name={'passwordRepeat'}
+              value={this.state.password}
+              onChange={this.handlePasswordChange}
+            />
           </div>
           <div className="text-center mt-6">
-            <SubmitButton label={'Sign In'} />
+            <SubmitButton label={'Sign Up'} />
           </div>
         </form>
       </div>
