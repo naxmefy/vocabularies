@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 
 import AppNavLayout from '../components/AppNavLayout'
-import Footer from '../components/Footer'
-import Header from '../components/Header'
 import SignInFooter from '../components/SignInFooter'
 import SignInForm from '../components/SignInForm'
 
